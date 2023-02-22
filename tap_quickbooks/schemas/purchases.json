@@ -38,6 +38,13 @@
         }
       }
     },
+    "LastUpdatedTime": {
+      "format": "date-time",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "RemitToAddr": {
       "$ref": "shared/address.json"
     },

@@ -185,6 +185,13 @@
         }
       }
     },
+    "LastUpdatedTime": {
+      "format": "date-time",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "TxnDate": {
       "type": [
         "null",

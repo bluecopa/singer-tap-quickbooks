@@ -63,6 +63,13 @@
         }
       }
     },
+    "LastUpdatedTime": {
+      "format": "date-time",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "CustomField": {
       "items": {
           "$ref": "shared/custom_field.json"

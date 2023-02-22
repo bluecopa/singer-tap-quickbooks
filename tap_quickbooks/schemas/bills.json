@@ -63,6 +63,13 @@
         "object"
       ]
     },
+    "LastUpdatedTime": {
+      "format": "date-time",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "LinkedTxn": {
       "$ref": "shared/linked_txn.json"
     },

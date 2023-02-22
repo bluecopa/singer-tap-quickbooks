@@ -117,6 +117,13 @@
         "null",
         "object"
       ]
+    },
+    "LastUpdatedTime": {
+      "format": "date-time",
+      "type": [
+        "null",
+        "string"
+      ]
     }
   },
   "type": [

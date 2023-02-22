@@ -78,6 +78,13 @@
         }
       }
     },
+    "LastUpdatedTime": {
+      "format": "date-time",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "VendorRef": {
       "$ref": "shared/ref_schema.json"
     },

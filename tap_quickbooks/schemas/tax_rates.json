@@ -43,6 +43,13 @@
         "object"
       ]
     },
+    "LastUpdatedTime": {
+      "format": "date-time",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "Id": {
       "type": [
         "null",

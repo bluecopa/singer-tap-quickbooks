@@ -150,6 +150,13 @@
         "object"
       ]
     },
+    "LastUpdatedTime": {
+      "format": "date-time",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "DepositToAccountRef": {
       "$ref": "shared/ref_schema.json"
     },

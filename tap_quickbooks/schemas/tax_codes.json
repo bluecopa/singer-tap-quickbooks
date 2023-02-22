@@ -150,6 +150,13 @@
         "object"
       ]
     },
+    "LastUpdatedTime": {
+      "format": "date-time",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "TaxCodeConfigType": {
       "type": [
         "null",

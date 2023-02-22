@@ -49,6 +49,13 @@
         "object"
       ]
     },
+    "LastUpdatedTime": {
+      "format": "date-time",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "ItemRef": {
       "$ref": "shared/ref_schema.json"
     },

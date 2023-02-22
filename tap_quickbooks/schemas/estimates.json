@@ -51,6 +51,13 @@
         "object"
       ]
     },
+    "LastUpdatedTime": {
+      "format": "date-time",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "TxnDate": {
       "format": "date-time",
       "type": [

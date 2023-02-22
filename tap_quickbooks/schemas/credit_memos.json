@@ -226,6 +226,13 @@
         "object"
       ]
     },
+    "LastUpdatedTime": {
+      "format": "date-time",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "GlobalTaxCalculation": {
       "type": [
         "null",

@@ -25,6 +25,13 @@
         "object"
       ]
     },
+    "LastUpdatedTime": {
+      "format": "date-time",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "FullyQualifiedName": {
       "type": [
         "null",

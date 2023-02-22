@@ -13,7 +13,7 @@ class Stream:
     key_properties = ['Id']
     replication_method = 'INCREMENTAL'
     # replication keys is LastUpdatedTime, nested under metadata
-    replication_keys = ['MetaData']
+    replication_keys = ['LastUpdatedTime']
     additional_where = None
     stream_name = None
     table_name = None
@@ -37,10 +37,11 @@ class Stream:
 
             results = resp.get(self.table_name, [])
             for rec in results:
+                rec["LastUpdatedTime"] = rec["MetaData"]["LastUpdatedTime"]
                 yield rec
 
             if results:
-                self.state = singer.write_bookmark(self.state, self.stream_name, 'LastUpdatedTime', rec.get('MetaData').get('LastUpdatedTime'))
+                self.state = singer.write_bookmark(self.state, self.stream_name, 'LastUpdatedTime', rec.get('LastUpdatedTime'))
                 singer.write_state(self.state)
 
             if len(results) < max_results:
@@ -425,6 +426,7 @@ class DeletedObjects(Stream):
                             self.is_deleted_object_found = True
                             rec['Type'] = entity
                             self.max_date = max(self.max_date, rec.get('MetaData').get('LastUpdatedTime'))
+                            rec['LastUpdatedTime'] = rec.get('MetaData').get('LastUpdatedTime')
                             yield rec
 
 

@@ -121,6 +121,13 @@
         "object"
       ]
     },
+    "LastUpdatedTime": {
+      "format": "date-time",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "CustomerMemo": {
       "properties": {
         "value": {
