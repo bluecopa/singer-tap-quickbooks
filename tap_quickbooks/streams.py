@@ -468,5 +468,6 @@ STREAM_OBJECTS = {
     "vendor_credits": VendorCredits,
     "vendors": Vendors,
     "profit_loss_report": ProfitAndLossReport,
-    "deleted_objects": DeletedObjects
+    "deleted_objects": DeletedObjects,
+    "journal_report": JournalReport
 }
