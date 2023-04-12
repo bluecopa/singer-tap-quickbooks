@@ -218,7 +218,6 @@ class ReportStream(Stream):
     replication_keys = ['ReportDate']
 
     def sync(self):
-
         is_start_date_used = False
         params = {
             'summarize_column_by': 'Days'
@@ -266,7 +265,7 @@ class ReportStream(Stream):
             if reports: # pylint: disable=using-constant-test
                 for report in reports:
                     yield report
-                self.state = singer.write_bookmark(self.state, self.stream_name, 'LastUpdatedTime', strptime_to_utc(report.get('ReportDate')).isoformat())
+                    self.state = singer.write_bookmark(self.state, self.stream_name, 'LastUpdatedTime', strptime_to_utc(report.get('ReportDate')).isoformat())
                 singer.write_state(self.state)
 
             # Set start_date and end_date of date window for next API call
