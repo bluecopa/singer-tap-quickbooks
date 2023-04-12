@@ -1,5 +1,4 @@
 from datetime import timedelta
-
 import singer
 from singer import utils
 from singer.utils import strptime_to_utc
@@ -7,6 +6,7 @@ from singer.utils import strptime_to_utc
 import tap_quickbooks.query_builder as query_builder
 
 DATE_WINDOW_SIZE = 29
+
 
 class Stream:
     endpoint = '/v3/company/{realm_id}/query'
@@ -22,7 +22,6 @@ class Stream:
         self.client = client
         self.config = config
         self.state = state
-
 
     def sync(self):
         start_position = 1
@@ -207,6 +206,7 @@ class Vendors(Stream):
     table_name = 'Vendor'
     additional_where = "Active IN (true, false)"
 
+
 class ReportStream(Stream):
     parsed_metadata = {
         'dates': [],
@@ -355,9 +355,16 @@ class ReportStream(Stream):
 
             yield report
 
+
 class ProfitAndLossReport(ReportStream):
     stream_name = 'profit_loss_report'
     endpoint = '/v3/company/{realm_id}/reports/ProfitAndLoss'
+
+
+class JournalReport(ReportStream):
+    stream_name = 'journal_report'
+    endpoint = '/v3/company/{realm_id}/reports/JournalReport'
+
 
 class DeletedObjects(Stream):
     endpoint = '/v3/company/{realm_id}/cdc'
