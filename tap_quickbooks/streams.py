@@ -501,7 +501,8 @@ class GeneralLedgerStream(Stream):
 
 class GeneralLedger(GeneralLedgerStream):
     stream_name = 'general_ledger'
-    endpoint = '/v3/company/{realm_id}/reports/GeneralLedger'
+    endpoint = '/v3/company/{realm_id}/reports/GeneralLedger?columns=tx_date,txn_type,doc_num,name,memo,split_acc,' \
+               'subt_nat_amount,rbal_nat_amount,debt_amt,credit_amt'
 
 
 class DeletedObjects(Stream):
