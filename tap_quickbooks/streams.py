@@ -446,6 +446,10 @@ class GeneralLedgerStream(Stream):
         columns = pileOfColumns.get('Column', [])
         for column in columns:
             column_name = column.get('ColTitle')
+            if column_name == 'Transaction Type':
+                column_name = 'Transaction_Type'
+            elif column_name == 'Memo/Description':
+                column_name = 'Description'
             self.columns_names.append(column_name)
 
     def parse_report_rows(self, pileOfRows):
