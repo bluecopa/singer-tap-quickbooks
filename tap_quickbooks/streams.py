@@ -476,16 +476,27 @@ class GeneralLedgerStream(Stream):
 
         rows = pileOfRows.get('Row', [])
         for row in rows:
-            headers = row['Header']['ColData'][0].get('value')
-            header_id = row['Header']['ColData'][0].get('id')
-            new_dict = {'Headers': {'value': headers, 'id': header_id}, 'rows': []}
-            for col in row['Rows']['Row']:
-                col_data = col['ColData']
-                col_dict = {}
-                for index, col_val in enumerate(col_data):
-                    col_dict[self.columns_names[index]] = col_val
-                new_dict['rows'].append(col_dict)
-            self.parsed_metadata['data'].append(new_dict)
+            header_object = row.get('Header')
+            if header_object is None:
+                pass
+            else:
+                colData = header_object.get('ColData')[0]
+                HeaderValue = colData.get('value')
+                HeaderId = colData.get('id')
+                new_dict = {'Headers': {'value': HeaderValue, 'id': HeaderId}, 'rows': []}
+                for col in row['Rows']['Row']:
+                    if 'Rows' in col.keys():
+                        self.parse_report_rows(col)
+                    else:
+                        col_data = col.get('ColData')
+                        if col_data is None:
+                            pass
+                        else:
+                            col_dict = {}
+                            for index, col_val in enumerate(col_data):
+                                col_dict[self.columns_names[index]] = col_val
+                            new_dict['rows'].append(col_dict)
+                        self.parsed_metadata['data'].append(new_dict)
 
     def day_wise_reports(self):
         '''
