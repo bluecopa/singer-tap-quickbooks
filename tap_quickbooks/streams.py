@@ -591,6 +591,11 @@ class DeletedObjects(Stream):
                             yield rec
 
 
+class Preferences(Stream):
+    stream_name = 'preferences'
+    table_name = 'Preferences'
+
+
 STREAM_OBJECTS = {
     "accounts": Accounts,
     "bill_payments": BillPayments,
@@ -623,5 +628,6 @@ STREAM_OBJECTS = {
     "vendors": Vendors,
     "profit_loss_report": ProfitAndLossReport,
     "deleted_objects": DeletedObjects,
-    "general_ledger": GeneralLedger
+    "general_ledger": GeneralLedger,
+    "preferences": Preferences
 }

@@ -1,0 +1,308 @@
+{
+	"type": ["object", "null"],
+	"properties": {
+		"AccountingInfoPrefs": {
+			"type": ["object", "null"],
+			"properties": {
+				"TrackDepartments": {
+					"type": ["string", "null"]
+				},
+				"DepartmentTerminology": {
+					"type": ["string", "null"]
+				},
+				"ClassTrackingPerTxn": {
+					"type": ["string", "null"]
+				},
+				"ClassTrackingPerTxnLine": {
+					"type": ["string", "null"]
+				},
+				"CustomerTerminology": {
+					"type": ["string", "null"]
+				}
+			}
+		},
+		"ProductAndServicesPrefs": {
+			"type": ["object", "null"],
+			"properties": {
+				"ForSales": {
+					"type": ["string", "null"]
+				},
+				"ForPurchase": {
+					"type": ["string", "null"]
+				},
+				"QuantityWithPriceAndRate": {
+					"type": ["string", "null"]
+				},
+				"QuantityOnHand": {
+					"type": ["string", "null"]
+				}
+			}
+		},
+		"SalesFormsPrefs": {
+			"type": ["object", "null"],
+			"properties": {
+				"CustomField": {
+					"type": ["array", "null"],
+					"items": {
+						"type": ["object", "null"],
+						"properties": {
+							"CustomField": {
+								"type": ["array", "null"],
+								"items": {
+									"type": ["object", "null"],
+									"properties": {
+										"Name": {
+											"type": ["string", "null"]
+										},
+										"Type": {
+											"type": ["string", "null"]
+										},
+										"BooleanValue": {
+											"type": ["string", "null"]
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"CustomTxnNumbers": {
+					"type": ["string", "null"]
+				},
+				"AllowDeposit": {
+					"type": ["string", "null"]
+				},
+				"AllowDiscount": {
+					"type": ["string", "null"]
+				},
+				"DefaultDiscountAccount": {
+					"type": ["string", "null"]
+				},
+				"AllowEstimates": {
+					"type": ["string", "null"]
+				},
+				"ETransactionEnabledStatus": {
+					"type": ["string", "null"]
+				},
+				"ETransactionAttachPDF": {
+					"type": ["string", "null"]
+				},
+				"ETransactionPaymentEnabled": {
+					"type": ["string", "null"]
+				},
+				"IPNSupportEnabled": {
+					"type": ["string", "null"]
+				},
+				"AllowServiceDate": {
+					"type": ["string", "null"]
+				},
+				"AllowShipping": {
+					"type": ["string", "null"]
+				},
+				"DefaultShippingAccount": {
+					"type": ["string", "null"]
+				},
+				"DefaultTerms": {
+					"type": ["object", "null"],
+					"properties": {
+						"value": {
+							"type": ["string", "null"]
+						}
+					}
+				},
+				"UsingPriceLevels": {
+					"type": ["string", "null"]
+				}
+			}
+		},
+		"EmailMessagesPrefs": {
+			"type": ["object", "null"],
+			"properties": {
+				"InvoiceMessage": {
+					"type": ["object", "null"],
+					"properties": {
+						"Subject": {
+							"type": ["string", "null"]
+						},
+						"Message": {
+							"type": ["string", "null"]
+						}
+					}
+				},
+				"EstimateMessage": {
+					"type": ["object", "null"],
+					"properties": {
+						"Subject": {
+							"type": ["string", "null"]
+						},
+						"Message": {
+							"type": ["string", "null"]
+						}
+					}
+				},
+				"SalesReceiptMessage": {
+					"type": ["object", "null"],
+					"properties": {
+						"Subject": {
+							"type": ["string", "null"]
+						},
+						"Message": {
+							"type": ["string", "null"]
+						}
+					}
+				},
+				"StatementMessage": {
+					"type": ["object", "null"],
+					"properties": {
+						"Subject": {
+							"type": ["string", "null"]
+						},
+						"Message": {
+							"type": ["string", "null"]
+						}
+					}
+				}
+			}
+		},
+		"VendorAndPurchasesPrefs": {
+			"type": ["object", "null"],
+			"properties": {
+				"TrackingByCustomer": {
+					"type": ["string", "null"]
+				},
+				"BillableExpenseTracking": {
+					"type": ["string", "null"]
+				},
+				"POCustomField": {
+					"type": ["array", "null"],
+					"items": {
+						"type": ["object", "null"],
+						"properties": {
+							"CustomField": {
+								"type": ["array", "null"],
+								"items": {
+									"type": ["object", "null"],
+									"properties": {
+										"Name": {
+											"type": ["string", "null"]
+										},
+										"Type": {
+											"type": ["string", "null"]
+										},
+										"BooleanValue": {
+											"type": ["string", "null"]
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"TimeTrackingPrefs": {
+			"type": ["object", "null"],
+			"properties": {
+				"UseServices": {
+					"type": ["string", "null"]
+				},
+				"BillCustomers": {
+					"type": ["string", "null"]
+				},
+				"ShowBillRateToAll": {
+					"type": ["string", "null"]
+				},
+				"MarkTimeEntriesBillable": {
+					"type": ["string", "null"]
+				}
+			}
+		},
+		"TaxPrefs": {
+			"type": ["object", "null"],
+			"properties": {
+				"UsingSalesTax": {
+					"type": ["string", "null"]
+				},
+				"TaxGroupCodeRef": {
+					"type": ["object", "null"],
+					"properties": {
+						"value": {
+							"type": ["string", "null"]
+						}
+					}
+				}
+			}
+		},
+		"CurrencyPrefs": {
+			"type": ["object", "null"],
+			"properties": {
+				"MultiCurrencyEnabled": {
+					"type": ["string", "null"]
+				},
+				"HomeCurrency": {
+					"type": ["object", "null"],
+					"properties": {
+						"value": {
+							"type": ["string", "null"]
+						}
+					}
+				}
+			}
+		},
+		"ReportPrefs": {
+			"type": ["object", "null"],
+			"properties": {
+				"ReportBasis": {
+					"type": ["string", "null"]
+				},
+				"CalcAgingReportFromTxnDate": {
+					"type": ["string", "null"]
+				}
+			}
+		},
+		"OtherPrefs": {
+			"type": ["object", "null"],
+			"properties": {
+				"NameValue": {
+					"type": ["array", "null"],
+					"items": {
+						"type": ["object", "null"],
+						"properties": {
+							"Name": {
+								"type": ["string", "null"]
+							},
+							"Value": {
+								"type": ["string", "null"]
+							}
+						}
+					}
+				}
+			}
+		},
+		"domain": {
+			"type": ["string", "null"]
+		},
+		"sparse": {
+			"type": ["string", "null"]
+		},
+		"Id": {
+			"type": ["string", "null"]
+		},
+		"SyncToken": {
+			"type": ["string", "null"]
+		},
+		"MetaData": {
+			"type": ["object", "null"],
+			"properties": {
+				"CreateTime": {
+					"type": ["string", "null"],
+					"format": "date-time"
+				},
+				"LastUpdatedTime": {
+					"type": ["string", "null"],
+					"format": "date-time"
+				}
+			}
+		}
+	}
+}
