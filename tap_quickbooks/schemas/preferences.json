@@ -303,6 +303,10 @@
 					"format": "date-time"
 				}
 			}
+		},
+		"LastUpdatedTime": {
+			"type": ["string", "null"],
+			"format": "date-time"
 		}
 	}
 }
