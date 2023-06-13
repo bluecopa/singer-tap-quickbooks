@@ -370,6 +370,7 @@ class GeneralLedgerStream(Stream):
     replication_method = 'INCREMENTAL'
     # replication keys is ReportDate, manually created from data
     replication_keys = ['ReportDate']
+    currency = ""
 
     def sync(self):
         is_start_date_used = False
@@ -414,7 +415,9 @@ class GeneralLedgerStream(Stream):
             resp = self.client.get(self.endpoint, params=params)
             self.parse_report_columns(resp.get('Columns', {}), resp.get('Header', {}))  # parse report columns from response's metadata
             self.parse_report_rows(resp.get('Rows', {}))  # parse report rows from response's metadata
-
+            header = resp.get('Header', {})
+            if header is not None:
+                self.currency = header.get('Currency')
             reports = self.day_wise_reports()  # get reports for every days from parsed metadata
             if reports:  # pylint: disable=using-constant-test
                 for report in reports:
@@ -450,6 +453,10 @@ class GeneralLedgerStream(Stream):
                 column_name = 'Transaction_Type'
             elif column_name == 'Memo/Description':
                 column_name = 'Description'
+            elif column_name == 'Foreign Debit':
+                column_name = 'Debit'
+            elif column_name == 'Foreign Credit':
+                column_name = 'Credit'
             self.columns_names.append(column_name)
 
     def parse_report_rows(self, pileOfRows):
@@ -496,7 +503,7 @@ class GeneralLedgerStream(Stream):
                             for index, col_val in enumerate(col_data):
                                 col_dict[self.columns_names[index]] = col_val
                             new_dict['rows'].append(col_dict)
-                        self.parsed_metadata['data'].append(new_dict)
+                self.parsed_metadata['data'].append(new_dict)
 
     def day_wise_reports(self):
         '''
@@ -506,6 +513,7 @@ class GeneralLedgerStream(Stream):
             report = dict()
             report['ReportDate'] = date
             report['AccountingMethod'] = 'Accrual'
+            report["Currency"] = self.currency
             report['Details'] = []
 
             for data in self.parsed_metadata['data']:

@@ -17,6 +17,12 @@
           "string"
         ]
       },
+      "Currency": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
       "Details": {
         "type": [
           "null",
